@@ -1,4 +1,4 @@
-<%= form_with(model: Picture.new, local: true) do |form| %>
+<%= form_with(model: @picture, local: true) do |form| %>
 
   <div class="picture_image">
     <%= form.label :image %>
@@ -11,5 +11,5 @@
   </div>
 
   <%= form.submit %q(投稿する) %>
-  
+
 <% end %>
