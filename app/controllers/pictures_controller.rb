@@ -12,6 +12,11 @@ class PicturesController < ApplicationController
     redirect_to new_picture_path
   end
 
+  def show
+    @picture = Picture.find(params[:id])
+    biding.pry
+  end
+
   private
   def picture_params
     params.require(:picture).permit(:image, :content)

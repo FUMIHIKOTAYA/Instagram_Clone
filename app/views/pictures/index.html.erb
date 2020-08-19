@@ -7,8 +7,12 @@
   </tr>
   <% @pictures.each do |picture| %>
   <tr>
-    <td><%= @picture.image.url %></td>
+    <td><%= picture.image %></td>
     <td><%= picture.content %></td>
+    <td><%= link_to %q(詳細), picture_path(picture.id) %></td>
   </tr>
   <% end %>
 </table>
+
+<br>
+<%= link_to %q(新規投稿), new_picture_path %>
