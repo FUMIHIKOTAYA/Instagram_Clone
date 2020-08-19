@@ -1,4 +1,5 @@
 <h1>投稿一覧</h1>
+<p><%= notice %></p>
 
 <table>
   <tr>
@@ -11,6 +12,7 @@
     <td><%= picture.content %></td>
     <td><%= link_to %q(詳細), picture_path(picture.id) %></td>
     <td><%= link_to %q(編集), edit_picture_path(picutre.id) %></td>
+    <td><%= link_to %q(削除), picture_path(picture.id), method: :delete, data: { confirm: %q(削除します。よろしいですか。)} %></td>
   </tr>
 <% end %>
 </table>
