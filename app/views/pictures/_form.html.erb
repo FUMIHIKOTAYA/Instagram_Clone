@@ -11,17 +11,20 @@
 <% end %>
 
   <div class="picture_image">
-    <%= form.label :image %>
+    <%= form.label :画像 %>
+    <%= image_tag(@picture.image.url) if @picture.image && @picture.image.url %>
     <%= form.file_field :image %>
+    <%= form.hidden_field :image_cache %>
   </div>
 
   <div class="picture_content">
-    <%= form.label :content %>
+    <%= form.label :内容 %>
     <%= form.text_area :content %>
   </div>
 
-  <%= form.submit %q(投稿する) %>
-
+  <div class="actions">
+    <%= form.submit %q(投稿する) %>
+  </div>
 <% end %>
 
 <br>
