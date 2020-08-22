@@ -1,0 +1,8 @@
+<div class="favorite_picture">
+  <% @favorites.each do |favorite| %>
+    <%= image_tag favorite.picture.image.url %>
+    <%= favorite.picture.content %>
+    <%= favorite.picture.user.name %>
+    <%= link_to %q(お気に入り解除), favorite_path(favorite.id), method: :delete %>
+  <% end %>
+</div>
