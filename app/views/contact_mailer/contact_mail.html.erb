@@ -1,0 +1,9 @@
+<h1>投稿が完了しました。</h1>
+
+<h4>お名前: <%= @picture.user.name %> さん</h4>
+
+<h4>投稿内容</h4>
+
+<%= image_tag @picture.image.url %>
+<br>
+<%= @picture.content %>
