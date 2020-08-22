@@ -1,0 +1,36 @@
+<%= form_with(model: @user, local: true) do |form| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @user.errors.count %>件のエラーがあります。</h2>
+        <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+    </div>
+  <% end %>
+
+  <div class="profile_field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+    <br>
+    <%= form.label :email %>
+    <%= form.email_field :email %>
+    <br>
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+    <br>
+    <%= form.label :password_confirmation %>
+    <%= form.password_field :password_confirmation %>
+    <br>
+    <%= form.label :profile %>
+    <%= form.text_area :profile %>
+    <br>
+    <%= form.label :image %>
+    <%= image_tag(@user.image.url) if @user.image && @user.image.url %>
+    <%= form.file_field :image %>
+    <%= form.hidden_field :image_cache %>
+    <br>
+    <%= form.submit %q(編集) %>
+  </div>
+<% end %>
