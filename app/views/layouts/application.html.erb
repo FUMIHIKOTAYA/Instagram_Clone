@@ -26,27 +26,27 @@
               </div>
               <div id="gnavi" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-    <% if logged_in? %>
-      <li><%= link_to %q(プロファイル), user_path(current_user.id) %></li>
-      <li><%= link_to %q(投稿一覧), pictures_path %></li>
-      <li><%= link_to %q(ログアウト), session_path(current_user.id), method: :delete %></li>
-    <% else %>
-      <li><%= link_to %q(新規登録), new_user_path %></li>
-      <li><%= link_to %q(ログイン), new_session_path %></li>
-    <% end %>
-  </ul>
-</div>
-</div>
-</nav>
-</header>
-    <% flash.each do |key, value| %>
-      <%= content_tag(:div, value, class: "#{key}") %>
-    <% end %>
-    <%= yield %>
-  </div>
-    <footer>
-      <small>&copy;2020 IG Clone.</small>
-    </footer>
-</div>
-</body>
+                  <% if logged_in? %>
+                    <li><%= link_to %q(プロファイル), user_path(current_user.id) %></li>
+                    <li><%= link_to %q(投稿一覧), pictures_path %></li>
+                    <li><%= link_to %q(ログアウト), session_path(current_user.id), method: :delete %></li>
+                  <% else %>
+                    <li><%= link_to %q(新規登録), new_user_path %></li>
+                    <li><%= link_to %q(ログイン), new_session_path %></li>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </header>
+        <% flash.each do |key, value| %>
+          <%= content_tag(:div, value, class: "#{key}") %>
+        <% end %>
+        <%= yield %>
+      </div>
+        <footer>
+          <small>&copy;2020 IG Clone.</small>
+        </footer>
+    </div>
+  </body>
 </html>

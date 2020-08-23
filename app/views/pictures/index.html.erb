@@ -1,23 +1,22 @@
 <h1>投稿一覧</h1>
 
-<table>
-  <tr>
-    <th>画像</th>
-    <th>内容</th>
-    <th>ユーザー</th>
-  </tr>
+<div class="row">
 <% @pictures.each do |picture| %>
-  <tr>
-    <td><%= image_tag picture.image.url %></td>
-    <td><%= picture.content %></td>
-    <td><%= picture.user.name %></td>
-    <td><%= link_to %q(詳細), picture_path(picture.id) %></td>
+<div class="col-md-4">
+  <div class="visual">
+    <%= image_tag picture.image.url %>
+      <div class="overview">
+    <p><%= picture.content %></p>
+    <h4><%= picture.user.name %></h4>
+    <%= link_to %q(詳細), picture_path(picture.id), class: "btn btn-info" %>
     <% if picture.user.id == current_user.id %>
-    <td><%= link_to %q(編集), edit_picture_path(picture.id) %></td>
-    <td><%= link_to %q(削除), picture_path(picture.id), method: :delete, data: { confirm: %q(削除します。よろしいですか。)} %></td>
+    <%= link_to %q(編集), edit_picture_path(picture.id), class: "btn btn-info" %>
+    <%= link_to %q(削除), picture_path(picture.id), method: :delete, data: { confirm: %q(削除します。よろしいですか。)}, class: "btn btn-danger" %>
     <% end %>
-  </tr>
-<% end %>
-</table>
+     </div>
+    </div>
+  </div>
+  <% end %>
+</div>
 <br>
-<%= link_to %q(新規投稿), new_picture_path %>
+<%= link_to %q(新規投稿), new_picture_path, class: "btn btn-primary" %>

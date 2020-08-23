@@ -12,9 +12,11 @@
 </div>
 <br>
 <% if @user.id == current_user.id %>
-<%= link_to %q(プロフィール編集), edit_user_path  %>
+<%= link_to %q(プロフィール編集), edit_user_path, class: "btn btn-info" %>
 <br>
-<%= link_to %q(お気に入り一覧へ), favorites_path  %>
+<br>
+<%= link_to %q(お気に入り一覧へ), favorites_path, class: "btn btn-info"  %>
 <% end %>
 <br>
-<%= link_to %q(投稿一覧へ), pictures_path %>
+<br>
+<%= link_to %q(投稿一覧へ), pictures_path, class: "btn btn-primary" %>
