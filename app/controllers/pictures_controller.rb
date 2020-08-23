@@ -46,7 +46,7 @@ class PicturesController < ApplicationController
 
   def destroy
     @picture.destroy
-    redirect_to picture_path, notice: %q(投稿を削除しました。)
+    redirect_to pictures_path, notice: %q(投稿を削除しました。)
   end
 
   private

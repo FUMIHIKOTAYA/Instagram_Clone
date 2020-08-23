@@ -5,7 +5,7 @@ class User < ApplicationRecord
     uniqueness: true
   before_validation { email.downcase! }
   has_secure_password
-  validates :password, presence: true, length: { minimum: 6 }
+  validates :password, presence: true, length: { minimum: 6 }, on: :create
 
   has_many :pictures
   has_many :favorites, dependent: :destroy

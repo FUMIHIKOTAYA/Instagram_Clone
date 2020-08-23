@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   def edit; end
 
   def update
-    if @user.update(user_update_params)
+    if @user.update(user_params)
       redirect_to user_path, notice: %q(プロフィールを編集しました。)
     else
       render :edit
@@ -28,11 +28,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
-  end
-
-  def user_update_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation,  :profile, :image, :image_cache)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :profile, :image, :image_cache)
   end
 
   def set_user
