@@ -1,0 +1,49 @@
+.navbar-default {
+  background-color: #a63aa0;
+}
+
+.navbar-default .navbar-brand,
+.navbar-default .navbar-nav li a {
+  color: #ffffff;
+}
+
+.navbar-nav {
+  float: right;
+}
+
+h1 {
+    font-weight: bold;
+    font-size:2.5rem;
+    color: #d14f3b;
+    margin-bottom: 20px;
+  }
+
+body {
+    padding: 5px;
+  }
+
+.overview {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+}
+
+.field {
+  margin-bottom: 15px;
+}
+
+footer {
+  text-align: center;
+  color: #ffffff;
+  background-color: #a63aa0;
+  padding: 10px 0;
+  width: 100%;
+  margin-top: 100px;
+}
+
+.container-fluid{
+  margin-top: 10px;
+  padding-bottom: 10px;
+}
