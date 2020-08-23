@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i(show edit update)
+  before_action :limit_access, only: %i(edit update)
 
   def new
     @user = User.new
@@ -33,5 +34,13 @@ class UsersController < ApplicationController
 
   def set_user
     @user = User.find(params[:id])
+  end
+
+  def limit_access
+    @user = User.find_by(id: params[:id])
+    unless @user.id == current_user.id
+      flash.now[:danger] = %q(実行権限がありません。)
+      render :show
+    end
   end
 end

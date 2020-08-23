@@ -13,11 +13,12 @@
     <td><%= picture.content %></td>
     <td><%= picture.user.name %></td>
     <td><%= link_to %q(詳細), picture_path(picture.id) %></td>
+    <% if picture.user.id == current_user.id %>
     <td><%= link_to %q(編集), edit_picture_path(picture.id) %></td>
     <td><%= link_to %q(削除), picture_path(picture.id), method: :delete, data: { confirm: %q(削除します。よろしいですか。)} %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>
-
 <br>
 <%= link_to %q(新規投稿), new_picture_path %>
